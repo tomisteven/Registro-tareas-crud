@@ -1,0 +1,55 @@
+
+{{#if tareaGuardadas}}
+    <table class="table table-bordered table-hover table-dark">
+        <thead>
+            <tr>
+                <th>N</th>
+                <th>Tarea</th>
+                <th>Descripcion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {{#each tareaGuardadas}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{title}}</td>
+            <td>{{description}}</td>
+            <td>
+
+                {{#if done}}
+                    <a class="btn btn-success" href="/task/{{_id}}/toggleDone">Tarea Realizada <img src="/icons/marca-de-verificacion.png" alt=""> </a>
+                {{else}}
+                    <a class="btn btn-danger" href="/task/{{_id}}/toggleDone">Tarea Pendiente <img src="/icons/close.png" alt=""></a>
+                {{/if}}
+
+
+                <a class="btn btn-primary" href="/task/{{_id}}/edit">Editar</a>
+                <a class="btn btn-danger" href="/task/{{_id}}/delete">Eliminar</a>
+            </td>
+        </tr>
+        
+
+        {{/each}}
+        </tbody>
+
+    </table>
+            
+        {{else}}
+
+        <div class="h-100 d-flex align-items-center justify-content-center">
+
+        <div class="text-center text-white">
+            <h3>No hay tareas</h3>
+            
+            <img  src="/icons/icon.svg" class="w-50" alt="">
+        </div>
+
+        </div>
+            
+        {{/if}}
+            
+        
+    

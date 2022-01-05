@@ -1,0 +1,2 @@
+npm run dev para ejecutar el index
+npm run build para comppilar carpeta dist 
